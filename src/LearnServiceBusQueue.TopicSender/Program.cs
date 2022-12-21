@@ -18,10 +18,7 @@ using ServiceBusMessageBatch messageBatch = await sender.CreateMessageBatchAsync
 
 for (int i = 0; i < numOfMessages; i++)
 {
-    if (!messageBatch.TryAddMessage(new ServiceBusMessage($"Message {i}")
-    {
-        Subject = "subscription-2",
-    }))
+    if (!messageBatch.TryAddMessage(new ServiceBusMessage($"Message {i}")))
     {
         // if it is too large for the batch
         throw new Exception($"The message {i} is too large to fit in the batch.");

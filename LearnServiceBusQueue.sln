@@ -15,7 +15,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnServiceBusQueue.TopicS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnServiceBusQueue.TopicReceiver", "src\LearnServiceBusQueue.TopicReceiver\LearnServiceBusQueue.TopicReceiver.csproj", "{430EEE80-8083-4310-8FE4-85207980C836}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnMassTransit.Sender", "src\LearnMassTransit.Sender\LearnMassTransit.Sender.csproj", "{ADC8DE08-5B68-4DEF-BC72-B34DAB102A4A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnMassTransit.Sender", "src\LearnMassTransit.Sender\LearnMassTransit.Sender.csproj", "{ADC8DE08-5B68-4DEF-BC72-B34DAB102A4A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnServiceBusQueue.ApiSender", "src\LearnServiceBusQueue.ApiSender\LearnServiceBusQueue.ApiSender.csproj", "{AC98B2BD-7AEE-4EEC-9DC6-8D93133F30CB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{2A2FBD86-D81E-44B7-9E9D-B00384048A7D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LearnServiceBusQueue.Model", "src\LearnServiceBusQueue.Model\LearnServiceBusQueue.Model.csproj", "{220E50D7-3FFE-4DDC-B6B0-CF88B3435AA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatalogoWiz.Web.Api", "src\CatalogoWiz.Web.Api\CatalogoWiz.Web.Api.csproj", "{3BD59492-80AC-4D15-AF20-0E038C634E5A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DevOps.Web.Api", "DevOps.Web.Api\DevOps.Web.Api.csproj", "{E6B8E155-68FF-4866-B8B6-C3275380DD23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +53,22 @@ Global
 		{ADC8DE08-5B68-4DEF-BC72-B34DAB102A4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADC8DE08-5B68-4DEF-BC72-B34DAB102A4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADC8DE08-5B68-4DEF-BC72-B34DAB102A4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC98B2BD-7AEE-4EEC-9DC6-8D93133F30CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC98B2BD-7AEE-4EEC-9DC6-8D93133F30CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC98B2BD-7AEE-4EEC-9DC6-8D93133F30CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC98B2BD-7AEE-4EEC-9DC6-8D93133F30CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{220E50D7-3FFE-4DDC-B6B0-CF88B3435AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{220E50D7-3FFE-4DDC-B6B0-CF88B3435AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{220E50D7-3FFE-4DDC-B6B0-CF88B3435AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{220E50D7-3FFE-4DDC-B6B0-CF88B3435AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BD59492-80AC-4D15-AF20-0E038C634E5A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BD59492-80AC-4D15-AF20-0E038C634E5A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BD59492-80AC-4D15-AF20-0E038C634E5A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BD59492-80AC-4D15-AF20-0E038C634E5A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6B8E155-68FF-4866-B8B6-C3275380DD23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6B8E155-68FF-4866-B8B6-C3275380DD23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6B8E155-68FF-4866-B8B6-C3275380DD23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6B8E155-68FF-4866-B8B6-C3275380DD23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +79,10 @@ Global
 		{0312B6D6-7C1C-44D3-8523-F0B73BBA31B7} = {E59A94CB-08F5-4C56-B3BA-8CB3A8456EF7}
 		{430EEE80-8083-4310-8FE4-85207980C836} = {5F32130C-1FE2-4CEF-A202-F06C128D90CC}
 		{ADC8DE08-5B68-4DEF-BC72-B34DAB102A4A} = {E59A94CB-08F5-4C56-B3BA-8CB3A8456EF7}
+		{AC98B2BD-7AEE-4EEC-9DC6-8D93133F30CB} = {E59A94CB-08F5-4C56-B3BA-8CB3A8456EF7}
+		{220E50D7-3FFE-4DDC-B6B0-CF88B3435AA7} = {2A2FBD86-D81E-44B7-9E9D-B00384048A7D}
+		{3BD59492-80AC-4D15-AF20-0E038C634E5A} = {E59A94CB-08F5-4C56-B3BA-8CB3A8456EF7}
+		{E6B8E155-68FF-4866-B8B6-C3275380DD23} = {5F32130C-1FE2-4CEF-A202-F06C128D90CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EAA80057-C358-471C-90D0-5AED73A84F59}

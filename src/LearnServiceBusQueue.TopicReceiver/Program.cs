@@ -9,7 +9,7 @@ client = new ServiceBusClient(
     "event-bus-wx1.servicebus.windows.net",
     new DefaultAzureCredential());
 
-processor = client.CreateProcessor("learn-topic", "learn-topic-subscription-2", new ServiceBusProcessorOptions());
+processor = client.CreateProcessor("learn-topic", "learn-topic-subscription", new ServiceBusProcessorOptions());
 
 try
 {

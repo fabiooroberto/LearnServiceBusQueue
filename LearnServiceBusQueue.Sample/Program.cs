@@ -1,5 +1,6 @@
 ﻿using Azure.Messaging.ServiceBus;
 using Azure.Identity;
+using System.Text.Json;
 
 ServiceBusClient client;
 
@@ -17,14 +18,19 @@ client = new ServiceBusClient(
     new DefaultAzureCredential(),
     clientOptions);
 
-sender = client.CreateSender("learn-queue");
+sender = client.CreateSender("queue-gustavera");
 
 // create a batch 
 using ServiceBusMessageBatch messageBatch = await sender.CreateMessageBatchAsync();
 
 for (int i = 0; i < numOfMessages; i++)
 {
-    if (!messageBatch.TryAddMessage(new ServiceBusMessage($"Message {i}")))
+    var body = new Janduy
+    {
+        Nome = "Lorem",
+        IdRepository = Guid.NewGuid().ToString()
+    };
+    if (!messageBatch.TryAddMessage(new ServiceBusMessage(JsonSerializer.Serialize(body))))
     {
         // if it is too large for the batch
         throw new Exception($"The message {i} is too large to fit in the batch.");
@@ -44,3 +50,9 @@ finally
 
 Console.WriteLine("Press any key to end the application");
 Console.ReadKey();
+
+class Janduy
+{
+    public string Nome { get; set; }
+    public string IdRepository { get; set; }
+}

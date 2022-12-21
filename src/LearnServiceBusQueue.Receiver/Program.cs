@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Text.Json;
+using System.Threading.Tasks;
 using Azure.Identity;
 using Azure.Messaging.ServiceBus;
 
@@ -16,13 +17,13 @@ client = new ServiceBusClient(
     new DefaultAzureCredential(),
     clientOptions);
 
-processor = client.CreateProcessor("learn-queue", new ServiceBusProcessorOptions());
+processor = client.CreateProcessor("queue-gustavera", new ServiceBusProcessorOptions());
 
 try
 {
     processor.ProcessMessageAsync += MessageHandler;
-
     processor.ProcessErrorAsync += ErroHandler;
+
 
     await processor.StartProcessingAsync();
 
@@ -42,8 +43,8 @@ finally
 
 async Task MessageHandler(ProcessMessageEventArgs args)
 {
-    string body = args.Message.Body.ToString();
-    Console.WriteLine($"Received: {body}");
+    var body = JsonSerializer.Deserialize<Gustavera>(args.Message.Body);
+    Console.WriteLine($"Received: {body.Nome}");
 
     await args.CompleteMessageAsync(args.Message);
 }
@@ -52,4 +53,12 @@ Task ErroHandler(ProcessErrorEventArgs args)
 {
     Console.WriteLine(args.Exception.ToString());
     return Task.CompletedTask;
+}
+
+
+class Gustavera
+{
+    public string UserEmail { get; set; }
+    public string Nome { get; set; }
+    public string IdRepository { get; set; }
 }
