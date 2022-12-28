@@ -1,5 +1,4 @@
 using DevOps.Web.Api.Core;
-using DevOps.Web.Api.Services.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +20,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.AddBuildServices();
+app.AddBuilderServices();
 
 app.UseHttpsRedirection();
 

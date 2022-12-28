@@ -20,8 +20,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-var bus = app.Services.GetRequiredService<IReceiveResource>();
-bus.RegisterOnMessageHandlerAndReceiveMessages().GetAwaiter().GetResult();
+app.AddBuilderServices();
 
 app.UseHttpsRedirection();
 

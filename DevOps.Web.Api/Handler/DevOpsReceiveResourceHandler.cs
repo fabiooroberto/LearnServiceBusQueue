@@ -4,7 +4,7 @@ using DevOps.Web.Api.ViewModel;
 
 namespace DevOps.Web.Api.Handler
 {
-    public class ReceiveCreateResource : IServiceBusConsumer
+    public class DevOpsReceiveResourceHandler : IDevOpsReceiveResourceHandler
     {
         private ServiceBusClient _client;
         private readonly IBusService _busService;
@@ -12,10 +12,10 @@ namespace DevOps.Web.Api.Handler
         private readonly ILogger _logger;
         private ServiceBusProcessor _processor;
 
-        public ReceiveCreateResource(
+        public DevOpsReceiveResourceHandler(
 
             ServiceBusClient client,
-            ILogger<ReceiveCreateResource> logger,
+            ILogger<DevOpsReceiveResourceHandler> logger,
             IBusService busService)
         {
             _logger = logger;

@@ -22,13 +22,13 @@ namespace DevOps.Web.Api.Core
 
         public static void AddServices(this IServiceCollection services)
         {
-            services.AddSingleton<IServiceBusConsumer, ReceiveCreateResource>();
+            services.AddSingleton<IDevOpsReceiveResourceHandler, DevOpsReceiveResourceHandler>();
             services.AddSingleton<IBusService, BusService>();
         }
 
-        public static void AddBuildServices(this WebApplication app)
+        public static void AddBuilderServices(this WebApplication app)
         {
-            var bus = app.Services.GetRequiredService<IServiceBusConsumer>();
+            var bus = app.Services.GetRequiredService<IDevOpsReceiveResourceHandler>();
             bus.RegisterOnMessageHandlerAndReceiveMessages().GetAwaiter().GetResult();
         }
     }

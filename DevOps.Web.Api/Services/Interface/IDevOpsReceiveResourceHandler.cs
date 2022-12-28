@@ -1,6 +1,6 @@
 ﻿namespace DevOps.Web.Api.Services.Interface
 {
-    public interface IServiceBusConsumer
+    public interface IDevOpsReceiveResourceHandler
     {
         Task RegisterOnMessageHandlerAndReceiveMessages();
         Task CloseQueueAsync();

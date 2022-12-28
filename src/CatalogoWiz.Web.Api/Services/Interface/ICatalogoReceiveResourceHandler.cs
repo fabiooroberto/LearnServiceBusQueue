@@ -1,6 +1,6 @@
 ﻿namespace CatalogoWiz.Web.Api.Services.Interface
 {
-    public interface IReceiveResource
+    public interface ICatalogoReceiveResourceHandler
     {
         Task RegisterOnMessageHandlerAndReceiveMessages();
         Task CloseQueueAsync();

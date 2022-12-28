@@ -21,9 +21,15 @@ namespace CatalogoWiz.Web.Api.Core
 
         public static void AddServices(this IServiceCollection services)
         {
-            services.AddSingleton<IReceiveResource, ReceiveResource>();
+            services.AddSingleton<ICatalogoReceiveResourceHandler, CatalogoReceiveResourceHandler>();
             services.AddScoped<IResourceService, ResourceService>();
             services.AddScoped<IBusService, BusService>();
+        }
+
+        public static void AddBuilderServices(this WebApplication app)
+        {
+            var bus = app.Services.GetRequiredService<ICatalogoReceiveResourceHandler>();
+            bus.RegisterOnMessageHandlerAndReceiveMessages().GetAwaiter().GetResult();
         }
     }
 }

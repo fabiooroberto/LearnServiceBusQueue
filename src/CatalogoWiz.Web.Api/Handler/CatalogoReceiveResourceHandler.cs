@@ -4,16 +4,16 @@ using CatalogoWiz.Web.Api.ViewModel;
 
 namespace CatalogoWiz.Web.Api.Handler
 {
-    public class ReceiveResource : IReceiveResource
+    public class CatalogoReceiveResourceHandler : ICatalogoReceiveResourceHandler
     {
         private ServiceBusClient _client;
         private const string QUEUE_NAME = "catalogo-update-resource";
-        private readonly ILogger<ReceiveResource> _logger;
+        private readonly ILogger<CatalogoReceiveResourceHandler> _logger;
         private ServiceBusProcessor _processor;
 
-        public ReceiveResource(
+        public CatalogoReceiveResourceHandler(
             ServiceBusClient client,
-            ILogger<ReceiveResource> logger)
+            ILogger<CatalogoReceiveResourceHandler> logger)
         {
             _client = client;
             _logger = logger;
